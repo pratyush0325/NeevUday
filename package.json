@@ -1,0 +1,17 @@
+{
+  "name": "setu",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace @setu/server dev\" \"yarn workspace @setu/web dev\"",
+    "build": "yarn workspace @setu/shared build && yarn workspace @setu/server build && yarn workspace @setu/web build",
+    "lint": "yarn workspaces run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
