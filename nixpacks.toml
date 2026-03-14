@@ -1,10 +1,12 @@
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+
 [phases.install]
-cmds = ["yarn install --frozen-lockfile"]
+cmds = ["npm install --prefix apps/server --legacy-peer-deps"]
 
 [phases.build]
 cmds = [
-  "yarn workspace @setu/shared build",
-  "cd apps/server && npx prisma generate && yarn build"
+  "cd apps/server && npx prisma generate && npx tsc"
 ]
 
 [start]

@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { prisma } from "../config/prisma";
 import { AuthRequest } from "../middleware/auth.middleware";
-import { CreateVillageRequestRequest } from "@setu/shared";
+import { CreateVillageRequestRequest } from "./shared.types";
 
 export const createRequest = async (req: AuthRequest, res: Response) => {
   const body: CreateVillageRequestRequest = req.body;

@@ -1,7 +1,7 @@
 import { Response } from "express";
 import { prisma } from "../config/prisma";
 import { AuthRequest } from "../middleware/auth.middleware";
-import { CreateDonationRequest } from "@setu/shared";
+import { CreateDonationRequest } from "./shared.types";
 
 export const createDonation = async (req: AuthRequest, res: Response) => {
   const { category, itemName, quantity, unit }: CreateDonationRequest = req.body;

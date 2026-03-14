@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { UserRole } from "@setu/shared";
+import { UserRole } from "./shared.types";
 
 export interface AuthRequest extends Request {
   user?: { id: string; role: UserRole; email: string };
